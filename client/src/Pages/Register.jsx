@@ -1,9 +1,8 @@
 import React from 'react'
 import cafe from '../images/cafe.jpg'
 import {AiOutlineEye} from 'react-icons/ai'
-import {Link} from 'react-router-dom'
 
-const Login = () => {
+const Register = () => {
   return (
     <div className='flex h-screen'>
         <img className='w-3/5 h-full' src={cafe} alt="cafe" />
@@ -22,11 +21,18 @@ const Login = () => {
                             <AiOutlineEye className='right-2 absolute top-3 cursor-pointer' />
                         </div>
                     </div>
+                    <div>
+                        <h2 className='text-black font-medium'>Confirm Password</h2>
+                        <div className='relative'>
+                            <input type='password' className='bg-gray-200 w-72 h-10 rounded-md pl-4 placeholder:text-gray-500 placeholder:text-sm' placeholder='Enter your password' /> 
+                            <AiOutlineEye className='right-2 absolute top-3 cursor-pointer' />
+                        </div>
+                    </div>
                 </div>
                 <div className='mt-10'>
-                    <button className='bg-txt-c1 text-white w-full h-10 text-center rounded-md'>Login</button>
+                    <button className='bg-txt-c2 text-white w-full h-10 text-center rounded-md'>Register</button>
                     <h2 className='text-center font-bold text-base my-4'>Or</h2>
-                    <button className='bg-txt-c2 text-white w-full h-10 text-center rounded-md'><Link to='/register'>Register</Link></button>
+                    <button className='bg-txt-c1 text-white w-full h-10 text-center rounded-md'>Login</button>
                 </div>
             </div>
         </div>
@@ -34,4 +40,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Register
