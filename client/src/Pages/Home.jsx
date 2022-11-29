@@ -1,11 +1,13 @@
 import React from 'react'
 import cafe from '../images/cafe.jpg'
 import {AiOutlineAmazon, AiOutlineFacebook, AiOutlineTwitter} from 'react-icons/ai'
+import Header from '../components/Header'
 
 const Home = () => {
   return (
     <>
-        <div className='container mx-auto'>
+    <Header />
+            <div className='container mx-auto'>
             <div className='relative flex items-center justify-center'>
                 <h1 className='text-white text-7xl absolute italic'>Welcome to ShopView!</h1>
                 <img className='w-full h-[550px]' src={cafe} alt="cafe" />

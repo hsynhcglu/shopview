@@ -1,12 +1,14 @@
 import React from 'react'
 import cafe from '../images/cafe.jpg'
-import {AiOutlineEye} from 'react-icons/ai'
+import {AiOutlineEye, AiOutlineClose} from 'react-icons/ai'
+import {Link} from 'react-router-dom'
 
 const Register = () => {
   return (
     <div className='flex h-screen'>
         <img className='w-3/5 h-full' src={cafe} alt="cafe" />
         <div className='bg-white w-full flex justify-center items-center'>
+        <Link to='/'><AiOutlineClose size={30} className='absolute right-5 top-5 text-gray-500' /></Link>
             <div>
                 <h1 className='text-4xl text-txt-c1 font-bold text-center'>Shop<span className='text-txt-c2'>View</span></h1>
                 <div className='grid gap-y-4 mt-10'>
@@ -32,7 +34,7 @@ const Register = () => {
                 <div className='mt-10'>
                     <button className='bg-txt-c2 text-white w-full h-10 text-center rounded-md'>Register</button>
                     <h2 className='text-center font-bold text-base my-4'>Or</h2>
-                    <button className='bg-txt-c1 text-white w-full h-10 text-center rounded-md'>Login</button>
+                    <Link to='/login'><button className='bg-txt-c1 text-white w-full h-10 text-center rounded-md'>Login</button></Link>
                 </div>
             </div>
         </div>
