@@ -12,5 +12,8 @@ app.get('/', (req,res) => {
 })
 
 app.listen(process.env.PORT, () => {
-    console.log(`${process.env.PORT}. portta dinleniyor`)
-})
+    mongoose
+      .connect(process.env.MONGO_URI)
+      .then(() => console.log("connected to db"))
+      .catch((err) => console.log(err));
+  });
