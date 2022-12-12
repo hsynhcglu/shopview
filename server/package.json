@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "ani kutusu app",
+  "description": "shopview",
   "main": "index.js",
   "type": "module",
   "scripts": {

@@ -2,14 +2,17 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import userRouter from './routers/userRouter.js'
 
-dotenv.config()
+dotenv.config();
 
-const app = express()
+const app = express();
 
-app.get('/', (req,res) => {
-    res.json({message:'5000 port'})
-})
+app.use(express.json({ limit: "20mb" }));
+app.use(cors());
+
+app.use("/users", userRouter);
+
 
 app.listen(process.env.PORT, () => {
     mongoose
