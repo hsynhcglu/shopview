@@ -34,8 +34,8 @@ const Register = ({history}) => {
                         e.preventDefault()
                         dispatch(signup(form, history))
                         setTimeout(()=>{
-                            navigate('/')
-                        },300)
+                            navigate('/login')
+                        },800)
                     }}>
                     <div className='grid gap-y-4 mt-10'>
                         <div>
