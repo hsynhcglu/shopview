@@ -33,7 +33,6 @@ const Login = ({history}) => {
                         navigate('/admin')
                     },800)
                 }
-                
             }}>
                 <h1 className='text-4xl text-txt-c1 font-bold text-center'>Shop<span className='text-txt-c2'>View</span></h1>
                 <div className='grid gap-y-4 mt-10'>

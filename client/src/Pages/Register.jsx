@@ -21,9 +21,7 @@ const Register = ({history}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     
-
   return (
-
     <div className='flex h-screen'>
         <img className='w-3/5 h-full' src={cafe} alt="cafe" />
         <div className='bg-white w-full flex justify-center items-center'>
