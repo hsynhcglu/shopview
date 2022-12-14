@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { Logout } from '../actions/userActions.js'
+import decode from 'jwt-decode'
+import { getAccessToken } from '../actions/userActions'
 
 const AdminSidebar = () => {
 
@@ -22,10 +24,32 @@ const AdminSidebar = () => {
     navigate('/')
   }
 
+  const renewAccessToken = async (id) => {
+    await dispatch(getAccessToken(id))
+    setUser(JSON.parse(localStorage.getItem('user')))
+  }
+
   useEffect(()=> {
     if(localStorage.getItem('user') && !user){
       setUser(JSON.parse(localStorage.getItem('user')))
     }
+
+    const interval = setInterval(() => {
+      const accessToken = user?.accessToken
+
+      if (accessToken) {
+        const decodedAccessToken = decode(accessToken)
+
+        if (decodedAccessToken.exp * 1000 < new Date().getTime()) {
+          renewAccessToken(user.user._id)
+        }
+      }
+    }, 5000)
+
+    return () => {
+      clearInterval(interval)
+    }
+
   }, [location, user])
 
   return (
@@ -43,9 +67,11 @@ const AdminSidebar = () => {
                     <MdOutlineDashboard className='mr-2' />Dashboard
                     </li>
                 </Link>
-                <li className='font-regular text-gray-600 flex items-center text-xl px-12 py-2 rounded-md cursor-pointer transition-all hover:bg-txt-c2 hover:text-white'>
-                  <BsShop className='mr-2' />Shop Settings
-                </li>
+                <Link to='/admin'>
+                  <li className='font-regular text-gray-600 flex items-center text-xl px-12 py-2 rounded-md cursor-pointer transition-all hover:bg-txt-c2 hover:text-white'>
+                    <BsShop className='mr-2' />Shop Settings
+                  </li>
+                </Link>
                 <li className='font-regular text-gray-600 flex items-center text-xl px-12 py-2 rounded-md cursor-pointer transition-all hover:bg-txt-c2 hover:text-white'>
                   <BiUser className='mr-2' />User Settings
                 </li>

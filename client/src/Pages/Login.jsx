@@ -7,6 +7,7 @@ import { signin } from '../actions/userActions.js'
 import { useNavigate } from "react-router-dom";
 
 const Login = ({history}) => {
+
     const initialFormData = {
         email: '',
         password: '',
@@ -18,6 +19,7 @@ const Login = ({history}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [login, setLogin] = useState(true)
+
   return (
     <div className='flex h-screen'>
         <img className='w-3/5 h-full' src={cafe} alt="cafe" />

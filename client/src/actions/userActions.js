@@ -1,4 +1,4 @@
-import { AUTH, ALERT, LOGOUT, LOGOUT_FAILED, SIGNIN_FAIL } from "../constants/actionsConstants.js";
+import { AUTH, ALERT, LOGOUT, LOGOUT_FAILED, SIGNIN_FAIL, REFRESH_ACCESS_TOKEN_SUCCESS, REFRESH_ACCESS_TOKEN_FAILED } from "../constants/actionsConstants.js";
 import * as api from "../axios";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -86,5 +86,21 @@ export const Logout = (id) => async (dispatch) => {
         ? error.response.data.message
         : error.message,
       })
+  }
+}
+
+export const getAccessToken = (id) => async (dispatch) => {
+  try {
+    const { data } = await api.refreshAccessToken(id)
+
+    dispatch({ type: REFRESH_ACCESS_TOKEN_SUCCESS, payload: data })
+  } catch (error) {
+    dispatch({
+      type: REFRESH_ACCESS_TOKEN_FAILED,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    })
   }
 }

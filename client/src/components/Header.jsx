@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 
 const Header = () => {
@@ -11,8 +11,9 @@ const Header = () => {
     if(localStorage.getItem('user') && !user){
       setUser(JSON.parse(localStorage.getItem('user')))
     }
+    
   }, [location, user])
-
+  
   return (
     <header className='flex container mx-auto h-32 items-center justify-around'>
         <div>
