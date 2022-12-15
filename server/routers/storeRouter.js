@@ -6,7 +6,7 @@ const router = express.Router()
 
 // Create a new store
 
-router.post('/admin', async (req,res) => {
+router.post('/storesettings', async (req,res) => {
     try{
         const store = req.body;
 

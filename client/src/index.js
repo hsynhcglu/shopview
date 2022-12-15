@@ -11,9 +11,11 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import usersReducer from './reducers/usersReducers'
+import storeReducer from './reducers/storeReducer';
 
 const reducer = combineReducers({
-  user: usersReducer
+  user: usersReducer,
+  store: storeReducer
 });
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));

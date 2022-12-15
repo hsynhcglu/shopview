@@ -16,16 +16,16 @@ const Toast = MySwal.mixin({
   },
 });
 
-export const createStore = (store) = async (dispatch) => {
+export const createStore = (store) => async (dispatch) => {
     try{
         const { data } = await api.createStore(store)
 
         Toast.fire({
             icon: "success",
-            title: "Kayıt İşlemi Başarıyla Tamamlanmıştır!",
+            title: "Store Settings Saved!",
           });
           
-        dispatch({type: CREATE, payload: data})
+        dispatch({type: CREATE_STORE, payload: data})
     }catch(error){
         console.log(error)
     }

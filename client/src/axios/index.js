@@ -10,4 +10,4 @@ export const logOut = async (id) => await API.get(`/users/logout/${id}`)
 
 export const refreshAccessToken = async (userId) => await API.get(`/users/admin/refresh/${userId}`)
 
-export const createStore = async (newStore) => await API.post('/store', newStore)
+export const createStore = async (newStore) => await API.post('/store/storesettings', newStore)

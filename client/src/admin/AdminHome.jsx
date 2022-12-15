@@ -3,6 +3,7 @@ import AdminHeader from '../components/AdminHeader'
 import AdminSidebar from '../components/AdminSidebar'
 import { Route, Routes } from "react-router-dom";
 import AdminDashboard from './AdminDashboard';
+import AdminStore from './AdminStore';
 
 const AdminHome = () => {
   return (
@@ -13,6 +14,7 @@ const AdminHome = () => {
             <AdminHeader />
             <Routes>
                 <Route path="/dashboard" element={<AdminDashboard />} />
+                <Route path="/store" element={<AdminStore />} />
             </Routes>
           </div>
       </div>

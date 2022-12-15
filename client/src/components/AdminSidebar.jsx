@@ -67,7 +67,7 @@ const AdminSidebar = () => {
                     <MdOutlineDashboard className='mr-2' />Dashboard
                     </li>
                 </Link>
-                <Link to='/admin'>
+                <Link to='/admin/store'>
                   <li className='font-regular text-gray-600 flex items-center text-xl px-12 py-2 rounded-md cursor-pointer transition-all hover:bg-txt-c2 hover:text-white'>
                     <BsShop className='mr-2' />Shop Settings
                   </li>
