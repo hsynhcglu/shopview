@@ -18,16 +18,16 @@ const Header = () => {
     <div>
       <nav className="bg-white-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
             <div className="flex">
-              <span>shop view</span>
+              <h2 className='text-xl text-txt-c1 font-bold'>Shop<span className='text-txt-c2'>View</span></h2>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-center space-x-4">
-                  <Link to='/' className="text-black-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
-                  <Link to='/shops' className="text-black-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Shops</Link>
-                  <Link to='/shops'  className="text-black-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</Link>
-                  <Link to='/shops' className="text-black-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</Link>
+                  <Link to='/' className="text-black-300 hover:bg-txt-c1 hover:text-white px-3 py-2 rounded-md text-lg font-medium">Home</Link>
+                  <Link to='/shops' className="text-black-300 hover:bg-txt-c1 hover:text-white px-3 py-2 rounded-md text-lg font-medium">Shops</Link>
+                  <Link to='/shops'  className="text-black-300 hover:bg-txt-c1 hover:text-white px-3 py-2 rounded-md text-lg font-medium">About</Link>
+                  <Link to='/shops' className="text-black-300 hover:bg-txt-c1 hover:text-white px-3 py-2 rounded-md text-lg font-medium">Contact</Link>
               </div>
             </div>
             <div>
